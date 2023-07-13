@@ -1,11 +1,12 @@
 import { useContext, useEffect, useState } from "react"
 import { AuthContext } from "../context/ContextProvider"
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
 
   const {handleLogout,isLoggedin,checkRole} = useContext(AuthContext);
   const [role,setRole] = useState('');
+  const navigate = useNavigate();
 
   useEffect(()=>{
     getRole();
@@ -22,7 +23,7 @@ const Navbar = () => {
         <h1>Credit App</h1>
         <div>
           {isLoggedin && <p onClick={()=>handleLogout()} >Logout</p>}
-          { role === "admin" && <p>Admin</p>}
+          { role === "admin" && <p onClick={()=>navigate('/admin')} >Admin</p>}
         </div>
     </div>
     <Outlet />

@@ -106,3 +106,18 @@ th {
   color: white;
   padding: 10px;
 }
+
+/* admin */
+
+.admin {
+  width: 400px;
+  margin: auto;
+  padding: 10px;
+}
+
+form input,select,button{
+  width: 100%;
+  padding: 10px;
+  display: block;
+  margin-top: 20px;
+}
