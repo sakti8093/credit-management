@@ -6,7 +6,7 @@ import { AuthContext } from './context/ContextProvider';
 function Login() {
 
   const navigate = useNavigate();
-  const { isLoggedin ,error, Login} = useContext(AuthContext)
+  const { isLoggedin , Login} = useContext(AuthContext)
   const [form,setForm] = useState({
     email:"",
     password:""

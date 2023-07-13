@@ -80,7 +80,7 @@ const AuthProvider = ({ children }: AuthProvider) => {
       data: { session },
     } = await supabase.auth.getSession();
     if (session?.user) {
-      const { data ,error } = await supabase
+      const { data  } = await supabase
         .from("peoples")
         .select()
         .eq("user_id", session.user.id);
