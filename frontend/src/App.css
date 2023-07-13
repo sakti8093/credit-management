@@ -1,0 +1,108 @@
+
+.navbar {
+ width: 100%;
+ background-color: teal;
+ color: white;
+ padding: 1rem;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+}
+
+.navbar div {
+  display: flex;
+  gap: 30px;
+}
+
+.navbar p {
+  padding: 5px 20px;
+  border-radius: 30px;
+  background-color: white;
+  color: black;
+}
+
+
+/* login */
+.login {
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login input {
+  margin-top: 4px;
+}
+
+.login form {
+  width: 300px;
+}
+
+.login label {
+  margin-top: 20px;
+  display: block;
+}
+
+.login input{
+  width: 100%;
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid gray;
+}
+
+.login button {
+  display: block;
+  width: 100%;
+  margin: auto;
+  margin-top: 20px;
+  background-color: teal;
+  color: white;
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+}
+
+.login button:hover {
+  opacity: 0.8;
+  transition: all 0.3s;
+  
+}
+
+.home {
+  max-width: 1024px;
+  margin: auto;
+  margin-top: 40px;
+}
+
+/* home */
+
+.home {
+  padding: 10px;
+}
+
+.home table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+td {
+  padding: 5px;
+}
+
+th {
+  background-color: teal;
+  color: white;
+  padding: 5px;
+}
+
+.footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  background-color: teal;
+  color: white;
+  padding: 10px;
+}
