@@ -37,6 +37,7 @@ const Home = () => {
         const { data, error } = await supabase
           .from("expenditure")
           .select()
+          .order("id",{ascending: true})
           .eq("user_id", user.id);
 
         if (error) {
@@ -72,8 +73,8 @@ const Home = () => {
         <thead>
           <tr>
             <th>sl no</th>
-            <th>spent in</th>
             <th>cost</th>
+            <th>spent in</th>
             <th>summary</th>
           </tr>
         </thead>
@@ -81,8 +82,8 @@ const Home = () => {
           {data.length>0 && data.map((elem, id) => (
               <tr key={id}>
                 <td>{id + 1}</td>
-                <td>{elem.spent_on}</td>
                 <td>₹ {elem.cost}</td>
+                <td>{elem.spent_on}</td>
                 <td>nil</td>
               </tr>
             ))}
