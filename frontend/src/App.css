@@ -81,6 +81,11 @@
   padding: 10px;
 }
 
+.table-container {
+  height: 400px;
+  overflow: scroll;
+}
+
 .home table {
   width: 100%;
   margin-top: 20px;

@@ -13,8 +13,8 @@ const Navbar = () => {
   },[role])
 
   const getRole = async() => {
-    const role = await checkRole();
-    setRole(role);
+    const res = await checkRole();
+    setRole(res);
   }
 
   return (

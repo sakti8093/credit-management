@@ -1,5 +1,8 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import supabase from "./config/supabaseClient";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "./context/ContextProvider";
+
 
 interface state {
   spent_on : string,
@@ -8,12 +11,33 @@ interface state {
 }
 
 const Admin = () => {
+  const {isLoggedin,checkRole} = useContext(AuthContext);
 
   const [state,setState] = useState<state>({
     spent_on : "",
     cost: 0,
     user_id:""
   })
+
+  const [role,setRole] = useState('');
+  const navigate = useNavigate();
+
+  useEffect(()=>{
+    getRole();
+  },[role])
+
+  const getRole = async() => {
+    const role = await checkRole();
+    setRole(role);
+  }
+
+  if(role !== "admin" ){
+    return navigate('/home');
+  }
+
+  if(!isLoggedin){
+   return navigate('/');
+  }
 
   const handleChange = (e:React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const {name,value} = e.target
