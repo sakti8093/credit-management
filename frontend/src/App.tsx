@@ -35,7 +35,6 @@ const App = () => {
     return (
       <AuthProvider>
         <RouterProvider router={router} />
-        <Footer />
       </AuthProvider>
     );
   };
