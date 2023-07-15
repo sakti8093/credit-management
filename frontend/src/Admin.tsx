@@ -23,8 +23,12 @@ const Admin = () => {
   const navigate = useNavigate();
 
   useEffect(()=>{
+
+    if(!isLoggedin){
+      navigate('/');
+    }
     getRole();
-  },[role])
+  },[role,isLoggedin])
 
   const getRole = async() => {
     const role = await checkRole();
@@ -32,11 +36,7 @@ const Admin = () => {
   }
 
   if(role !== "admin" ){
-    return navigate('/home');
-  }
-
-  if(!isLoggedin){
-   return navigate('/');
+     navigate('/home');
   }
 
   const handleChange = (e:React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -52,13 +52,11 @@ const Admin = () => {
       .select();
 
       if( data && data?.length>0){
-        console.log(data);
+        alert("Updated Successfully")
       }else {
         alert(error?.message)
       }
-
       setState({...state,spent_on:"",cost:0,user_id:""})
-
   };
 
   return (

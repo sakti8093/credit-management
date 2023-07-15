@@ -77,13 +77,13 @@ const AuthProvider = ({ children }: AuthProvider) => {
 
   const checkRole = async () => {
     const {
-      data: { session },
-    } = await supabase.auth.getSession();
-    if (session?.user) {
+      data: { user },
+    } = await supabase.auth.getUser();
+    if (user) {
       const { data  } = await supabase
         .from("peoples")
         .select()
-        .eq("user_id", session.user.id);
+        .eq("user_id", user.id);
       if (data && data[0].role === "admin") {
         return "admin";
       }

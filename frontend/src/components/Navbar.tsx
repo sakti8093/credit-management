@@ -14,6 +14,7 @@ const Navbar = () => {
 
   const getRole = async() => {
     const res = await checkRole();
+    console.log(res,"res");
     setRole(res);
   }
 

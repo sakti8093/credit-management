@@ -1,5 +1,5 @@
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+
 import {
   RouterProvider,
   createBrowserRouter,
@@ -7,7 +7,7 @@ import {
 
 import Login from "./Login";
 import Home from "./Home";
-import { AuthProvider } from "./context/ContextProvider";
+import { AuthProvider } from "./context/ContextProvider";       
 import Admin from "./Admin";
 
 const App = () => {
@@ -21,12 +21,12 @@ const App = () => {
           element :<Login />
         },
         {
-          path: "/home",
-          element: <Home />,
-        },
-        {
           path : '/admin',
           element : <Admin />
+        },
+        {
+          path: "/home",
+          element: <Home />,
         }
       ]
     }
